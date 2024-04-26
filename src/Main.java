@@ -1,5 +1,4 @@
 public class Main {
-
     /**
      * Given two arrays of integers, write a method called combine that combines the two arrays into one larger array.
      * The method combine will return a new one dimensional array of integers.
@@ -8,9 +7,20 @@ public class Main {
      * zip(myArray1, myArray2) → {1,3,5,7,9,2,4,6,8,10,12,14,16}
      */
     public static int[] combine(int[] array1, int[] array2) {
+        int[] combined = new int[array1.length + array2.length];
+        int index = 0;
 
-        return null;
+        for (int num : array1) {
+            combined[index] = num;
+            index++;
+        }
 
+        for (int num : array2) {
+            combined[index] = num;
+            index++;
+        }
+
+        return combined;
     }
 
     /**
@@ -21,9 +31,17 @@ public class Main {
      * zip(myArray1, myArray2) → {1,2,3,4,5,6,7,8,9,10}
      */
     public static int[] zip(int[] array1, int[] array2) {
+        int[] zipped = new int[array1.length + array2.length];
+        int index = 0;
 
-        return null;
+        for (int i = 0; i < array1.length; i++) {
+            zipped[index] = array1[i];
+            index++;
+            zipped[index] = array2[i];
+            index++;
+        }
 
+        return zipped;
     }
 
     /**
@@ -34,9 +52,13 @@ public class Main {
      * product(myArray1, myArray2) → {2,12,30,56,90}
      */
     public static int[] product(int[] array1, int[] array2) {
+        int[] product = new int[array1.length];
 
-        return null;
+        for (int i = 0; i < array1.length; i++) {
+            product[i] = array1[i] * array2[i];
+        }
 
+        return product;
     }
 
     /**
@@ -56,14 +78,27 @@ public class Main {
      * capitalCount(words) → {1, 2, 2, 0}
      */
     public static int[] capitalCount(String[] words) {
+        int[] capitalCounts = new int[words.length];
 
-        return null;
+        for (int i = 0; i < words.length; i++) {
+            capitalCounts[i] = countCapitalLetters(words[i]);
+        }
 
+        return capitalCounts;
     }
 
     public static int countCapitalLetters(String word) {
+        int count = 0;
 
-        return 0;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+
+            if (Character.isAlphabetic(c) && Character.isUpperCase(c)) {
+                count++;
+            }
+        }
+
+        return count;
 
     }
 
